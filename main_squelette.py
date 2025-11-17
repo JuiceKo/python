@@ -1,6 +1,3 @@
-# ---------------------------
-# Paramètres du Grid World
-# ---------------------------
 N = 4
 TERMINAL_STATES = [0, 15]
 ACTIONS = [0, 1, 2, 3]
@@ -8,9 +5,6 @@ GAMMAS = [1.0, 0.9, 0.8]
 THETA = 1e-4
 
 
-# ---------------------------------------------
-# Outil : calculer l'état suivant (deterministe)
-# ---------------------------------------------
 def get_next_state(s, action, n, terminal_states):
     if s in terminal_states:
         return s
@@ -205,9 +199,6 @@ def print_policy(policy, n):
     print()
 
 
-# ------------------------------
-# Lancer les deux algos
-# ------------------------------
 for gamma in GAMMAS:
     print("=====================================")
     print("VALUE ITERATION   - gamma =", gamma)
@@ -229,3 +220,4 @@ for gamma in GAMMAS:
     print_values(V_pi, N)
     print("Politique optimale π(s) :")
     print_policy(pi_pi, N)
+
